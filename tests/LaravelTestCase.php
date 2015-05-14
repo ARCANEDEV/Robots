@@ -1,12 +1,12 @@
 <?php namespace Arcanedev\Robots\Tests;
 
-use Orchestra\Testbench\TestCase;
+use Orchestra\Testbench\TestCase as BenchTestCase;
 
 /**
  * Class LaravelTestCase
  * @package Arcanedev\Robots\Tests
  */
-abstract class LaravelTestCase extends TestCase
+abstract class LaravelTestCase extends BenchTestCase
 {
     /* ------------------------------------------------------------------------------------------------
      |  Main Functions
@@ -28,7 +28,7 @@ abstract class LaravelTestCase extends TestCase
     /**
      * Get package providers.
      *
-     * @return array
+     * @return string[]
      */
     protected function getPackageProviders()
     {
