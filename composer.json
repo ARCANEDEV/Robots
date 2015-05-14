@@ -1,6 +1,6 @@
 {
     "name": "arcanedev/robots",
-    "description": "Robots generator",
+    "description": "Robots.txt generator",
     "keywords": ["robots", "laravel"],
     "license": "MIT",
     "authors": [
