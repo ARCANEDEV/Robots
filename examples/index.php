@@ -6,9 +6,10 @@ use Arcanedev\Robots\Robots;
 
 $robots = new Robots;
 
-$robots->addSitemap('sitemap.xml');
 $robots->addUserAgent('Google');
-$robots->addHost('www.google.com');
-$robots->addDisallow(['/dir-1/', '/dir-2/', '/dir-3/']);
+$robots->addDisallow(['/admin/', '/login/', '/secret/']);
+$robots->addSpacer();
+$robots->addSitemap('sitemap.xml');
 
-var_dump($robots, $robots->generate());
+header('HTTP/1.1 200 OK');
+echo $robots->generate();
