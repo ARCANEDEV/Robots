@@ -51,7 +51,48 @@ And the facade in the `aliases` array:
 
 # USAGE
 
-Coming soon...
+### Laravel
+
+The quickest way to use Robots is to just setup a callback-style route for robots.txt in your `app/routes.php` file.
+
+```php
+Route::get('robots.txt', function() {
+
+    // If on the live server, serve a nice, welcoming robots.txt.
+    if (App::environment() == 'production') {
+        Robots::addUserAgent('*');
+        Robots::addSitemap('sitemap.xml');
+    } 
+    else {
+        // If you're on any other server, tell everyone to go away.
+        Robots::addDisallow('*');
+    }
+
+    return Response::make(Robots::generate(), 200, ['Content-Type' => 'text/plain']);
+});
+```
+
+### Hard Coded
+
+Add a rule in your `.htaccess` for `robots.txt` that points to a new script (or something else) that generate the robots file.
+
+The code would look something like:
+
+```php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Arcanedev\Robots\Robots;
+
+$robots = new Robots;
+
+$robots->addUserAgent('Google');
+$robots->addDisallow(['/admin/', '/login/', '/secret/']);
+$robots->addSpacer();
+$robots->addSitemap('sitemap.xml');
+
+header('HTTP/1.1 200 OK');
+echo $robots->generate();
+```
 
 ## Contribution
 
@@ -60,9 +101,9 @@ Any ideas are welcome. Feel free the submit any issues or pull requests.
 ## TODOS:
 
   - [ ] Documentation
-  - [ ] Examples
+  - [x] Examples
   - [x] More tests and code coverage
   - [x] Laravel Support (v4.2)
   - [ ] Laravel Support (v5.0)
-  - [ ] Refactoring
+  - [x] Refactoring
   
