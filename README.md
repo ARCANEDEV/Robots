@@ -1,17 +1,45 @@
-# Robots.txt Generator [![Packagist License](http://img.shields.io/packagist/l/arcanedev/robots.svg?style=flat-square)](LICENSE.md)
+# Robots.txt Generator [![Packagist License][badge_license]](LICENSE.md) [![For PHP][badge_php]](https://github.com/ARCANEDEV/Robots)
 
-[![Travis Status](http://img.shields.io/travis/ARCANEDEV/Robots.svg?style=flat-square)](https://travis-ci.org/ARCANEDEV/Robots)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/Robots.svg?style=flat-square)](https://scrutinizer-ci.com/g/ARCANEDEV/Robots/?branch=master)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/ARCANEDEV/Robots.svg?style=flat-square)](https://scrutinizer-ci.com/g/ARCANEDEV/Robots/?branch=master)
-[![Github Release](http://img.shields.io/github/release/ARCANEDEV/Robots.svg?style=flat-square)](https://github.com/ARCANEDEV/Robots/releases)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/arcanedev/robots.svg?style=flat-square)](https://packagist.org/packages/arcanedev/robots)
-[![Github Issues](http://img.shields.io/github/issues/ARCANEDEV/Robots.svg?style=flat-square)](https://github.com/ARCANEDEV/Robots/issues)
+[![Travis Status][badge_build]](https://travis-ci.org/ARCANEDEV/Robots)
+[![HHVM Status][badge_hhvm]](http://hhvm.h4cc.de/package/arcanedev/robots)
+[![Coverage Status][badge_coverage]](https://scrutinizer-ci.com/g/ARCANEDEV/Robots/?branch=master)
+[![Scrutinizer Code Quality][badge_quality]](https://scrutinizer-ci.com/g/ARCANEDEV/Robots/?branch=master)
+[![SensioLabs Insight][badge_insight]](https://insight.sensiolabs.com/projects/e0d5d467-31c8-4bfe-84f1-e4b0bfe2c497)
+[![Github Issues][badge_issues]](https://github.com/ARCANEDEV/Robots/issues)
+
+[![Packagist][badge_package]](https://packagist.org/packages/arcanedev/robots)
+[![Packagist Release][badge_release]](https://packagist.org/packages/arcanedev/robots)
+[![Packagist Downloads][badge_downloads]](https://packagist.org/packages/arcanedev/robots)
+
+[badge_php]:       https://img.shields.io/badge/PHP-Framework%20agnostic-4F5B93.svg?style=flat-square
+[badge_license]:   https://img.shields.io/packagist/l/arcanedev/robots.svg?style=flat-square
+
+[badge_build]:     https://img.shields.io/travis/ARCANEDEV/Robots.svg?style=flat-square
+[badge_hhvm]:      https://img.shields.io/hhvm/arcanedev/robots.svg?style=flat-square
+[badge_coverage]:  https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/Robots.svg?style=flat-square
+[badge_quality]:   https://img.shields.io/scrutinizer/g/ARCANEDEV/Robots.svg?style=flat-square
+[badge_insight]:   https://img.shields.io/sensiolabs/i/e0d5d467-31c8-4bfe-84f1-e4b0bfe2c497.svg?style=flat-square
+[badge_issues]:    https://img.shields.io/github/issues/ARCANEDEV/Robots.svg?style=flat-square
+
+[badge_package]:   https://img.shields.io/badge/package-arcanedev/robots-blue.svg?style=flat-square
+[badge_release]:   https://img.shields.io/packagist/v/arcanedev/robots.svg?style=flat-square
+[badge_downloads]: https://img.shields.io/packagist/dt/arcanedev/robots.svg?style=flat-square
 
 *By [ARCANEDEV&copy;](http://www.arcanedev.net/)*
 
+
+### Features
+
+  * Framework agnostic package.
+  * Well documented &amp; IDE Friendly.
+  * Well tested with maximum code quality.
+  * Laravel 4.2 supported.
+  * Laravel 5 supported.
+  * Made with :heart: &amp; :coffee:.
+
 ### Requirements
 
-    - PHP >= 5.4.0
+    - PHP >= 5.5.9
 
 # INSTALLATION
 
@@ -22,7 +50,7 @@ You can install this package via [Composer](http://getcomposer.org/). Add this t
 ```json
 {
     "require": {
-        "arcanedev/robots": "~1.0"
+        "arcanedev/robots": "~2.0"
     }
 }
 ```
@@ -32,12 +60,13 @@ Then install it via `composer install` or `composer update`.
 ## Laravel
 
 ### Setup
-Once the package is installed, you can register the service provider in `app/config/app.php` in the `providers` array:
+
+Once the package is installed, you can register the service provider in `config/app.php` in the `providers` array:
 
 ```php
 'providers' => [
     ...
-    'Arcanedev\Robots\Laravel\ServiceProvider',
+    Arcanedev\Robots\RobotsServiceProvider::class,
 ],
 ```
 
@@ -46,7 +75,7 @@ And the facade in the `aliases` array:
 ```php
 'aliases' => [
     ...
-    'Robots' => 'Arcanedev\Robots\Laravel\Facade',
+    'Robots' => Arcanedev\Robots\Facades\Robots::class,
 ],
 ```
 
@@ -95,15 +124,18 @@ header('HTTP/1.1 200 OK');
 echo $robots->generate();
 ```
 
-## Contribution
-
-Any ideas are welcome. Feel free the submit any issues or pull requests.
-
-## TODOS:
+## TODOS
 
   - [ ] Documentation
+
+## DONE
+
+  - [x] Framework agnostic package.
   - [x] Examples
-  - [x] More tests and code coverage
-  - [x] Laravel Support (v4.2)
-  - [ ] Laravel Support (v5.0)
-  - [x] Refactoring
+  - [x] Laravel v4.2 Support.
+  - [x] Laravel v5.0 Support.
+  - [x] Laravel v5.1 Support.
+
+## Contribution
+
+Any ideas are welcome. Feel free to submit any issues or pull requests, please check the [contribution guidelines](CONTRIBUTING.md).
