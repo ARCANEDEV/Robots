@@ -4,8 +4,10 @@ use Arcanedev\Robots\Laravel\ServiceProvider;
 use Arcanedev\Robots\Tests\LaravelTestCase;
 
 /**
- * Class ServiceProviderTest
- * @package Arcanedev\Robots\Tests\Laravel
+ * Class     ServiceProviderTest
+ *
+ * @package  Arcanedev\Robots\Tests\Laravel
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class ServiceProviderTest extends LaravelTestCase
 {

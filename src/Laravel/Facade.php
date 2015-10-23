@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
+/**
+ * Class     Facade
+ *
+ * @package  Arcanedev\Robots\Laravel
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
+ */
 class Facade extends IlluminateFacade
 {
     /**

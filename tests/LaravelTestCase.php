@@ -3,8 +3,10 @@
 use Orchestra\Testbench\TestCase as BenchTestCase;
 
 /**
- * Class LaravelTestCase
- * @package Arcanedev\Robots\Tests
+ * Class     LaravelTestCase
+ *
+ * @package  Arcanedev\Robots\Tests
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 abstract class LaravelTestCase extends BenchTestCase
 {

@@ -3,6 +3,12 @@
 use Arcanedev\Robots\Robots;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
+/**
+ * Class     ServiceProvider
+ *
+ * @package  Arcanedev\Robots\Laravel
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
+ */
 class ServiceProvider extends IlluminateServiceProvider
 {
     /* ------------------------------------------------------------------------------------------------

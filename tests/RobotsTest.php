@@ -3,8 +3,10 @@
 use Arcanedev\Robots\Robots;
 
 /**
- * Class RobotsTest
- * @package Arcanedev\Robots\Tests
+ * Class     RobotsTest
+ *
+ * @package  Arcanedev\Robots\Tests
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class RobotsTest extends TestCase
 {

@@ -3,8 +3,10 @@
 use Arcanedev\Robots\Entities\LineCollection;
 
 /**
- * Class Robots
- * @package Arcanedev\Robots
+ * Class     Robots
+ *
+ * @package  Arcanedev\Robots
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class Robots
 {

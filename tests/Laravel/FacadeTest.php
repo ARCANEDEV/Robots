@@ -3,6 +3,12 @@
 use Arcanedev\Robots\Laravel\Facade as Robots;
 use Arcanedev\Robots\Tests\LaravelTestCase;
 
+/**
+ * Class     FacadeTest
+ *
+ * @package  Arcanedev\Robots\Tests\Laravel
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
+ */
 class FacadeTest extends LaravelTestCase
 {
     /* ------------------------------------------------------------------------------------------------

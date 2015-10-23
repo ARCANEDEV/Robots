@@ -3,8 +3,10 @@
 use Illuminate\Support\Collection;
 
 /**
- * Class LineCollection
- * @package Arcanedev\Robots\Entities
+ * Class     LineCollection
+ *
+ * @package  Arcanedev\Robots\Entities
+ * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LineCollection extends Collection
 {
