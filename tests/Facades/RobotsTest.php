@@ -1,15 +1,15 @@
-<?php namespace Arcanedev\Robots\Tests\Laravel;
+<?php namespace Arcanedev\Robots\Tests\Facades;
 
-use Arcanedev\Robots\Laravel\Facade as Robots;
+use Arcanedev\Robots\Facades\Robots;
 use Arcanedev\Robots\Tests\LaravelTestCase;
 
 /**
- * Class     FacadeTest
+ * Class     RobotsTest
  *
- * @package  Arcanedev\Robots\Tests\Laravel
+ * @package  Arcanedev\Robots\Tests\Facades
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class FacadeTest extends LaravelTestCase
+class RobotsTest extends LaravelTestCase
 {
     /* ------------------------------------------------------------------------------------------------
      |  Main Functions

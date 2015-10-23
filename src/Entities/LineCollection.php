@@ -1,6 +1,6 @@
 <?php namespace Arcanedev\Robots\Entities;
 
-use Illuminate\Support\Collection;
+use Arcanedev\Support\Collection;
 
 /**
  * Class     LineCollection
@@ -11,20 +11,13 @@ use Illuminate\Support\Collection;
 class LineCollection extends Collection
 {
     /* ------------------------------------------------------------------------------------------------
-     |  Properties
-     | ------------------------------------------------------------------------------------------------
-     */
-    /** @var array */
-    protected $items = [];
-
-    /* ------------------------------------------------------------------------------------------------
      |  Main Functions
      | ------------------------------------------------------------------------------------------------
      */
     /**
-     * Add a line
+     * Add a line.
      *
-     * @param string $line
+     * @param  string  $line
      *
      * @return self
      */
@@ -36,24 +29,12 @@ class LineCollection extends Collection
     }
 
     /**
-     * Generate the line collection
+     * Generate the line collection.
      *
      * @return string
      */
     public function generate()
     {
         return implode(PHP_EOL, $this->items);
-    }
-
-    /**
-     * Reset the line collection
-     *
-     * @return self
-     */
-    public function reset()
-    {
-        $this->items = [];
-
-        return $this;
     }
 }

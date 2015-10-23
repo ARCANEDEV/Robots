@@ -42,7 +42,7 @@ class RobotsTest extends TestCase
     /** @test */
     public function it_can_be_instantiated()
     {
-        $this->assertInstanceOf('Arcanedev\\Robots\\Robots', $this->robots);
+        $this->assertInstanceOf(Robots::class, $this->robots);
         $this->assertEquals('', $this->robots->generate());
     }
 

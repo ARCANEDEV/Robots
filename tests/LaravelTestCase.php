@@ -1,6 +1,6 @@
 <?php namespace Arcanedev\Robots\Tests;
 
-use Orchestra\Testbench\TestCase as BenchTestCase;
+use Orchestra\Testbench\TestCase;
 
 /**
  * Class     LaravelTestCase
@@ -8,7 +8,7 @@ use Orchestra\Testbench\TestCase as BenchTestCase;
  * @package  Arcanedev\Robots\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-abstract class LaravelTestCase extends BenchTestCase
+abstract class LaravelTestCase extends TestCase
 {
     /* ------------------------------------------------------------------------------------------------
      |  Main Functions
@@ -18,41 +18,48 @@ abstract class LaravelTestCase extends BenchTestCase
     {
         parent::setUp();
     }
+
     public function tearDown()
     {
         parent::tearDown();
     }
 
     /* ------------------------------------------------------------------------------------------------
-     |  Other Functions
+     |  Laravel Functions
      | ------------------------------------------------------------------------------------------------
      */
     /**
      * Get package providers.
      *
-     * @return string[]
+     * @param  \Illuminate\Foundation\Application  $app
+     *
+     * @return array
      */
-    protected function getPackageProviders()
+    protected function getPackageProviders($app)
     {
-        return ['Arcanedev\\Robots\\Laravel\\ServiceProvider'];
+        return [
+            \Arcanedev\Robots\RobotsServiceProvider::class
+        ];
     }
 
     /**
      * Get package aliases.
      *
+     * @param  \Illuminate\Foundation\Application  $app
+     *
      * @return array
      */
-    protected function getPackageAliases()
+    protected function getPackageAliases($app)
     {
         return [
-            'Robots' => 'Arcanedev\\Robots\\Laravel\\Facade'
+            'Robots' => \Arcanedev\Robots\Facades\Robots::class
         ];
     }
 
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  \Illuminate\Foundation\Application   $app
      */
     protected function getEnvironmentSetUp($app)
     {
