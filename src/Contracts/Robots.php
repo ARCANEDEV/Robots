@@ -1,12 +1,12 @@
 <?php namespace Arcanedev\Robots\Contracts;
 
 /**
- * Interface  RobotsInterface
+ * Interface  Robots
  *
  * @package   Arcanedev\Robots\Contracts
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-interface RobotsInterface
+interface Robots
 {
     /* ------------------------------------------------------------------------------------------------
      |  Main Functions

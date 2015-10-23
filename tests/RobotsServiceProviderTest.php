@@ -59,7 +59,7 @@ class RobotsServiceProviderTest extends LaravelTestCase
     {
         $expected = [
             'arcanedev.robots',
-            \Arcanedev\Robots\Contracts\RobotsInterface::class,
+            \Arcanedev\Robots\Contracts\Robots::class,
         ];
 
         $this->assertEquals($expected, $this->provider->provides());

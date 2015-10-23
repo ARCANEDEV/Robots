@@ -1,6 +1,5 @@
 <?php namespace Arcanedev\Robots;
 
-use Arcanedev\Robots\Contracts\RobotsInterface;
 use Arcanedev\Robots\Entities\LineCollection;
 
 /**
@@ -9,18 +8,8 @@ use Arcanedev\Robots\Entities\LineCollection;
  * @package  Arcanedev\Robots
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class Robots implements RobotsInterface
+class Robots implements Contracts\Robots
 {
-    /* ------------------------------------------------------------------------------------------------
-     |  Constants
-     | ------------------------------------------------------------------------------------------------
-     */
-    const HOST          = 'Host';
-    const USER_AGENT    = 'User-agent';
-    const SITEMAP       = 'Sitemap';
-    const ALLOW         = 'Allow';
-    const DISALLOW      = 'Disallow';
-
     /* ------------------------------------------------------------------------------------------------
      |  Properties
      | ------------------------------------------------------------------------------------------------
@@ -67,7 +56,7 @@ class Robots implements RobotsInterface
      */
     public function addSitemap($sitemap)
     {
-        return $this->addRule(self::SITEMAP, $sitemap);
+        return $this->addRule('Sitemap', $sitemap);
     }
 
     /**
@@ -79,7 +68,7 @@ class Robots implements RobotsInterface
      */
     public function addUserAgent($userAgent)
     {
-        return $this->addRule(self::USER_AGENT, $userAgent);
+        return $this->addRule('User-agent', $userAgent);
     }
 
     /**
@@ -91,7 +80,7 @@ class Robots implements RobotsInterface
      */
     public function addHost($host)
     {
-        return $this->addRule(self::HOST, $host);
+        return $this->addRule('Host', $host);
     }
 
     /**
@@ -103,7 +92,7 @@ class Robots implements RobotsInterface
      */
     public function addAllow($directories)
     {
-        return $this->addRuleLine($directories, self::ALLOW);
+        return $this->addRuleLine($directories, 'Allow');
     }
 
     /**
@@ -115,7 +104,7 @@ class Robots implements RobotsInterface
      */
     public function addDisallow($directories)
     {
-        return $this->addRuleLine($directories, self::DISALLOW);
+        return $this->addRuleLine($directories, 'Disallow');
     }
 
     /**

@@ -84,7 +84,7 @@ class RobotsServiceProvider extends ServiceProvider
     {
         return [
             'arcanedev.robots',
-            \Arcanedev\Robots\Contracts\RobotsInterface::class
+            \Arcanedev\Robots\Contracts\Robots::class
         ];
     }
 
@@ -100,7 +100,7 @@ class RobotsServiceProvider extends ServiceProvider
         $this->app->singleton('arcanedev.robots', Robots::class);
 
         $this->app->bind(
-            \Arcanedev\Robots\Contracts\RobotsInterface::class,
+            \Arcanedev\Robots\Contracts\Robots::class,
             'arcanedev.robots'
         );
     }
