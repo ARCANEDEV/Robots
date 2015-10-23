@@ -1,5 +1,6 @@
 <?php namespace Arcanedev\Robots;
 
+use Arcanedev\Robots\Contracts\RobotsInterface;
 use Arcanedev\Robots\Entities\LineCollection;
 
 /**
@@ -8,7 +9,7 @@ use Arcanedev\Robots\Entities\LineCollection;
  * @package  Arcanedev\Robots
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class Robots
+class Robots implements RobotsInterface
 {
     /* ------------------------------------------------------------------------------------------------
      |  Constants
@@ -25,7 +26,7 @@ class Robots
      | ------------------------------------------------------------------------------------------------
      */
     /**
-     * The lines for the robots.txt
+     * The line collection.
      *
      * @var LineCollection
      */
@@ -34,6 +35,9 @@ class Robots
     /* ------------------------------------------------------------------------------------------------
      |  Constructor
      | ------------------------------------------------------------------------------------------------
+     */
+    /**
+     * Make a Robots instance.
      */
     public function __construct()
     {
@@ -45,7 +49,7 @@ class Robots
      | ------------------------------------------------------------------------------------------------
      */
     /**
-     * Generate the robots.txt data
+     * Generate the robots.txt data.
      *
      * @return string
      */
@@ -55,9 +59,9 @@ class Robots
     }
 
     /**
-     * Add a Sitemap to the robots.txt
+     * Add a Sitemap to the robots.txt.
      *
-     * @param  string $sitemap
+     * @param  string  $sitemap
      *
      * @return self
      */
@@ -67,9 +71,9 @@ class Robots
     }
 
     /**
-     * Add a User-agent to the robots.txt
+     * Add a User-agent to the robots.txt.
      *
-     * @param  string $userAgent
+     * @param  string  $userAgent
      *
      * @return self
      */
@@ -81,7 +85,7 @@ class Robots
     /**
      * Add a Host to the robots.txt
      *
-     * @param  string $host
+     * @param  string  $host
      *
      * @return self
      */
@@ -91,9 +95,9 @@ class Robots
     }
 
     /**
-     * Add a allow rule to the robots.txt
+     * Add a allow rule to the robots.txt.
      *
-     * @param  string|array $directories
+     * @param  string|array  $directories
      *
      * @return self
      */
@@ -103,9 +107,9 @@ class Robots
     }
 
     /**
-     * Add a disallow rule to the robots.txt
+     * Add a disallow rule to the robots.txt.
      *
-     * @param  string|array $directories
+     * @param  string|array  $directories
      *
      * @return self
      */
@@ -115,9 +119,9 @@ class Robots
     }
 
     /**
-     * Add a comment to the robots.txt
+     * Add a comment to the robots.txt.
      *
-     * @param  string $comment
+     * @param  string  $comment
      *
      * @return self
      */
@@ -127,7 +131,7 @@ class Robots
     }
 
     /**
-     * Add a spacer to the robots.txt
+     * Add a spacer to the robots.txt.
      *
      * @return self
      */
@@ -137,43 +141,7 @@ class Robots
     }
 
     /**
-     * Add a rule to the robots.txt
-     *
-     * @param  string|array $directories
-     * @param  string       $rule
-     *
-     * @return self
-     */
-    protected function addRuleLine($directories, $rule)
-    {
-        foreach ((array) $directories as $directory) {
-            $this->addRule($rule, $directory);
-        }
-
-        return $this;
-    }
-
-    protected function addRule($rule, $value)
-    {
-        return $this->addLine($rule . ': ' . $value);
-    }
-
-    /**
-     * Add a line to the robots.txt
-     *
-     * @param  string $line
-     *
-     * @return self
-     */
-    protected function addLine($line)
-    {
-        $this->lines->add($line);
-
-        return $this;
-    }
-
-    /**
-     * Reset the lines
+     * Reset the lines.
      *
      * @return self
      */
@@ -186,13 +154,65 @@ class Robots
         return $this;
     }
 
+    /* ------------------------------------------------------------------------------------------------
+     |  Check Functions
+     | ------------------------------------------------------------------------------------------------
+     */
     /**
-     * Check if line collection is empty
+     * Check if line collection is empty.
      *
      * @return bool
      */
     public function isEmpty()
     {
         return $this->lines->isEmpty();
+    }
+
+    /* ------------------------------------------------------------------------------------------------
+     |  Other Functions
+     | ------------------------------------------------------------------------------------------------
+     */
+    /**
+     * Add a rule to the robots.txt.
+     *
+     * @param  string|array  $directories
+     * @param  string        $rule
+     *
+     * @return self
+     */
+    protected function addRuleLine($directories, $rule)
+    {
+        foreach ((array) $directories as $directory) {
+            $this->addRule($rule, $directory);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add a rule.
+     *
+     * @param  string  $rule
+     * @param  string  $value
+     *
+     * @return self
+     */
+    protected function addRule($rule, $value)
+    {
+        return $this->addLine($rule . ': ' . $value);
+    }
+
+    /**
+     * Add a line to the robots.txt.
+     *
+     * @param  string  $line
+     *
+     * @return self
+     */
+    protected function addLine($line)
+    {
+        $this->lines->add($line);
+
+        return $this;
     }
 }
